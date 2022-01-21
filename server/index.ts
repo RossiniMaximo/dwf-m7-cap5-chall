@@ -1,6 +1,6 @@
 import * as express from "express";
-import { index } from "../lib";
 import * as cors from "cors";
+import { index } from "../lib";
 import { Comerce } from "../db/comercio";
 const API_URL = "http://localhost:3001";
 const app = express();
@@ -19,11 +19,8 @@ app.get("/comerces/:id", async (req, res) => {
 });
 
 function hitsSimplifier(body) {
-  const { name, lat, lng, area, objectID } = body;
   const res: any = {};
-  console.log("soy el body:", body);
   body.forEach((e) => {
-    console.log("soy e :", e._geoloc.lat);
     res.name = e.name;
     res.area = e.area;
     res.objectID = e.objectID;
@@ -94,8 +91,7 @@ app.delete("/comerces/:id", async (req, res) => {
   const comerce = await Comerce.findByPk(req.params.id);
   comerce.destroy();
 });
-
-app.get("*", express.static("/public/index.html"));
+app.use(express.static("public"));
 
 app.listen(port, () => {
   console.log("El servidor esta corriendo de manera exitosa", port);

@@ -42,10 +42,15 @@ function initSearchForm(callback) {
       method: "get",
     })
       .then((res) => {
+        console.log(res);
         res.json();
       })
       .then((data) => {
-        console.log(data);
+        console.log("soy la data", data);
+        for (const comerce of data) {
+          const { lat, lng } = comerce._geoloc;
+          const marker = new mapboxgl.Marker().setLngLat(lng, lat).addTo(map);
+        }
       });
 
     map.setZoom(14);

@@ -1,0 +1,22 @@
+{
+  "name": "algolia-chall",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "algoliasearch": "^4.12.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15",
+    "parcel": "^2.2.1",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.13.0",
+    "types": "^0.1.1",
+    "typescript": "^4.5.4"
+  },
+  "scripts": {
+    "dev": "nodemon --watch ./server/index.ts --exec ts-node ./server/index.ts",
+    "dev:front": "parcel serve ./public/index.html"
+  }
+}

@@ -1,6 +1,6 @@
 node_modules
 dist
 .parcel-cache
-db
+db/index.ts
 lib
 yarn.lock

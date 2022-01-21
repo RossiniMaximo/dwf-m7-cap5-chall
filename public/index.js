@@ -1,4 +1,5 @@
-const MAPBOX_TOKEN = "";
+const MAPBOX_TOKEN =
+  "pk.eyJ1IjoibWF4emkiLCJhIjoiY2t5bHJqdzRpMHczNjJ2cGtzODc3cnd0eSJ9.X4K8_sRROGgfFfMlr56mDA";
 const mapboxClient = new MapboxClient(MAPBOX_TOKEN);
 function initMap() {
   mapboxgl.accessToken = MAPBOX_TOKEN;
